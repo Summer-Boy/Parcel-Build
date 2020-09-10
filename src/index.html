@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Web App" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <script>
+      window.loadingStartTime = new Date();
+    </script>
+    <script>
+      (function (doc, win) {
+        document.documentElement.style.opacity = 0;
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+            document.documentElement.style.opacity = 1;
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+    <title>Parcel Build</title>
+    <link rel="stylesheet" href="./assets/css/reset.less" />
+    <link rel="stylesheet" href="./assets/css/main.less" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logo"></div>
+      <img class="parcel" src="./assets/img/Parcel.png" alt="">
+      <div class="title">Parcel自动打包构建</div>
+      <ul class="support">
+        <li>es6语法</li>
+        <li>async/await</li>
+        <li>class语法</li>
+        <li>postcss配置</li>
+        <li>less css预处理器</li>
+        <li>预置函数方法</li>
+        <li>....</li>
+      </ul>
+    </div>
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
